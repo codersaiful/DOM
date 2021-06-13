@@ -1,6 +1,3 @@
-window.document.title = "Hello World";
-console.dir(window.document.images);
-
 let Items = document.querySelector('.items');
 let Form = document.querySelector('form.form');
 let InputBox = document.querySelector('input.insert-text');
@@ -45,9 +42,6 @@ const itemFinalized = () => {
 }
 
 Form.addEventListener('submit',(e)=>{
-    console.log(e);
-    console.dir(e);
-    
     e.preventDefault();
     itemFinalized();
     

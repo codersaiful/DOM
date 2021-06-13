@@ -1,7 +1,7 @@
 let Items = document.querySelector('.items');
 let Form = document.querySelector('form.form');
 let InputBox = document.querySelector('input.insert-text');
-let LiveInput = document.querySelector('#live-input');
+
 
 //Function
 const createItem = ( item_text ) => {

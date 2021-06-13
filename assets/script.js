@@ -45,6 +45,9 @@ const itemFinalized = () => {
 }
 
 Form.addEventListener('submit',(e)=>{
+    console.log(e);
+    console.dir(e);
+    
     e.preventDefault();
     itemFinalized();
     
@@ -68,9 +71,18 @@ InputBox.addEventListener('focusout',()=>{
         alreadEmptyItem.remove();
     }
 });
-InputBox.addEventListener('keyup',function(){
+InputBox.addEventListener('keyup',function(e){
+    e.preventDefault();
     let lastItem = document.querySelector('.last-item');
-    if(!lastItem) return;
-    let lastItemText = document.createTextNode(this.value);
-    lastItem.innerHTML = this.value;//lastItemText;
+    
+    if(lastItem){
+        let lastItemText = document.createTextNode(this.value);
+        lastItem.innerHTML = this.value;//lastItemText;
+    }else{
+        let last_item_class = 'last-item';
+        let emptyLi = createItem(InputBox.value);
+        emptyLi.className= last_item_class + ' item';
+        Items.appendChild(emptyLi);
+
+    }
 });

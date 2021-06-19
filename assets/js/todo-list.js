@@ -21,8 +21,16 @@ const createNewLi = (inputedText) => {
 
 const addLi = () => {
     let todoText = inputBox.value;
+    let errorMsgBox = document.querySelector('.error-message');
+    if(todoText === ''){
+        errorMsgBox.innerHTML="Empty Input box. Please checked.";
+        errorMsgBox.style.display = 'block'
+        return;
+    }
+    
     myUlItem.appendChild(createNewLi(todoText));
-    inputBox.value="";
+    inputBox.value=errorMsgBox.innerHTML="";
+    errorMsgBox.style.display = 'none'
     inputBox.focus();
 }
 
@@ -49,12 +57,13 @@ inputBox.addEventListener('keyup',(e)=>{
 
 
 myUlItem.addEventListener('click',function(e){
+    let element = e.target;
     console.log(e.target.tagName);
-    if(e.target){
 
+    if(element.tagName === 'LI'){
+        element.classList.toggle('checked');
+        //element.setAttribute('class','checked');
+    }else if( element.tagName === 'SPAN' ){
+        element.parentElement.remove();
     }
-    e.target.setAttribute('class','checked');
-    console.dir(e.target);
-    console.log(e.target);
-    // e.target.style.display = "none";
 });

@@ -13,6 +13,25 @@ body {
     width: 600px;
     margin: 50px auto;
 }
+
+.inputbox-box-wrapper {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    clear: both;
+}
+
+p.error-message {
+    display: block;
+    background: #e91e6373;
+    text-align: left;
+    clear: both;
+    font-size: 12px;
+    padding: 5px;
+    box-shadow: 0 10px 41px 0 #00000054;
+    display: none;
+}
+
 /* Include the padding and border in an element's total width and height */
 * {
   box-sizing: border-box;

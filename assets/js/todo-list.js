@@ -26,6 +26,12 @@ const addLi = () => {
     inputBox.focus();
 }
 
+/**
+ * Need more practice on Event trigger and dispatchEvent
+ * @link https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
+ */
+const myEvnt = new Event('test-event');
+const myCusEvnt = new CustomEvent('test-event');
 
 
 addButton.addEventListener('click',()=>{
@@ -43,6 +49,7 @@ inputBox.addEventListener('keyup',(e)=>{
 
 
 myUlItem.addEventListener('click',function(e){
+    console.log(e.target.tagName);
     if(e.target){
 
     }

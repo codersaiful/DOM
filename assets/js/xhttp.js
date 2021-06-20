@@ -21,6 +21,9 @@ const sendAjaxReq = ()=>{
                      console.log(this.getAllResponseHeaders());
                      
                      xhttpOutPut.innerHTML = this.response;
+
+                     let json = JSON.parse(this.response);
+                     console.log(json);
               }
        }
        
